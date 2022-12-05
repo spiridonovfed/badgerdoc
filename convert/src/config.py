@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     minio_secret_key: Optional[str] = os.getenv("MINIO_SECRET_KEY")
     s3_prefix: Optional[str] = os.getenv("S3_PREFIX")
     s3_credentials_provider: Optional[str] = os.getenv(
-        "S3_CREDENTIALS_PROVIDER"
+        "S3_CREDENTIALS_PROVIDER", "minio"
     )
     uploading_limit: int = Field(100, env="UPLOADING_LIMIT")
     coco_image_format: str = "jpg"
